@@ -1,0 +1,392 @@
+{
+  "graphs": [
+    {
+      "id": "tenancy",
+      "type": "root",
+      "label": "Tomshley Root Context",
+      "nodes": {
+        "global": {
+          "label": "global.root.tenancy.tomshley.world",
+          "domains": [
+            "tomshley.world"
+          ]
+        },
+        "global-usa": {
+          "label": "usa.global.root.tenancy.tomshley.world",
+          "domains": [
+          ]
+        },
+        "global-italy": {
+          "label": "italy.global.root.tenancy.tomshley.world",
+          "domains": [
+          ]
+        },
+        "global-usa-tomshleyllc": {
+          "label": "tomshleyllc.usa.global.root.tenancy.tomshley.world",
+          "domains": [
+          ]
+        },
+        "global-usa-subsidiary": {
+          "label": "subsidiary.usa.global.root.tenancy.tomshley.world",
+          "domains": [
+          ]
+        },
+        "global-usa-companynamea": {
+          "label": "companynamea.usa.global.root.tenancy.tomshley.world",
+          "domains": [
+          ]
+        },
+        "global-usa-companynameb": {
+          "label": "companynameb.usa.global.root.tenancy.tomshley.world",
+          "domains": [
+          ]
+        }
+      },
+      "edges": [
+        {
+          "source": "global",
+          "target": "global-italy",
+          "relation": "tenancy_relation"
+        },
+        {
+          "source": "global",
+          "target": "global-usa",
+          "relation": "tenancy_relation"
+        },
+        {
+          "source": "global-usa",
+          "target": "global-usa-tomshleyllc",
+          "relation": "tenancy_relation"
+        },
+        {
+          "source": "global-usa",
+          "target": "global-usa-subsidiary",
+          "relation": "tenancy_relation"
+        },
+        {
+          "source": "global-usa",
+          "target": "global-usa-companynamea",
+          "relation": "tenancy_relation"
+        },
+        {
+          "source": "global-usa",
+          "target": "global-usa-companynameb",
+          "relation": "tenancy_relation"
+        }
+      ]
+    },
+    {
+      "id": "humans",
+      "type": "root_humans",
+      "label": "Tomshley Root Humans",
+      "nodes": {
+        "tenant-global": {
+          "label": "global.root.tenancy.tomshley.world"
+        },
+        "tenant-global-usa-tomshleyllc": {
+          "label": "tomshleyllc.usa.global.root.tenancy.tomshley.world"
+        },
+        "tenant-global-usa-subsidiary": {
+          "label": "subsidiary.usa.global.root.tenancy.tomshley.world"
+        },
+        "tenant-global-usa-companynamea": {
+          "label": "companynamea.usa.global.root.tenancy.tomshley.world"
+        },
+        "tenant-global-usa-companynameb": {
+          "label": "companynameb.usa.global.root.tenancy.tomshley.world"
+        },
+        "human-thomas-schena": {
+          "label": "thomas.schena"
+        },
+        "human-ashley-schena": {
+          "label": "ashley.schena"
+        },
+        "human-steve-carlton": {
+          "label": "steve.carlton"
+        },
+        "human-genevieve-carlton": {
+          "label": "genevieve.carlton"
+        },
+        "human-marco-smith": {
+          "label": "marco.smith"
+        }
+      },
+      "edges": [
+        {
+          "source": "tenant-global",
+          "target": "human-thomas-schena",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-tomshleyllc",
+          "target": "human-thomas-schena",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-tomshleyllc",
+          "target": "human-ashley-schena",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-subsidiary",
+          "target": "human-thomas-schena",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-subsidiary",
+          "target": "human-ashley-schena",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-companynamea",
+          "target": "human-steve-carlton",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-companynamea",
+          "target": "human-ashley-schena",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-companynameb",
+          "target": "human-genevieve-carlton",
+          "relation": "tenancy-assignment"
+        },
+        {
+          "source": "tenant-global-usa-companynameb",
+          "target": "human-marco-smith",
+          "relation": "tenancy-assignment"
+        }
+      ]
+    },
+    {
+      "id": "pam",
+      "type": "root_pam",
+      "label": "Tomshley Root PAM",
+      "nodes": {
+        "pamtype-breaksmith": {
+          "label": ""
+        },
+        "pamtype-domainadmin": {
+          "label": ""
+        },
+        "pamtype-domainservice": {
+          "label": ""
+        },
+        "pamtype-service": {
+          "label": ""
+        },
+        "pamtype-application": {
+          "label": ""
+        },
+        "pamaccount-admin": {
+          "label": ""
+        },
+        "pamaccount-governator": {
+          "label": ""
+        }
+      },
+      "edges": [
+        {
+          "source": "pamtype-breaksmith",
+          "target": "pamaccount-admin",
+          "relation": "tenancy-pam-assignment"
+        },
+        {
+          "source": "pamtype-domainadmin",
+          "target": "pamaccount-governator",
+          "relation": "tenancy-pam-assignment"
+        }
+      ]
+    },
+    {
+      "id": "stacks",
+      "type": "root_stacks",
+      "label": "Tomshley Root Stacks",
+      "nodes": {
+        "stackgroup-objectstore": {
+          "label": "objectstore-stackgroup"
+        },
+        "stackgroup-pulsarhouse": {
+          "label": "pulsarhouse-stackgroup"
+        },
+        "stackgroup-fastdata": {
+          "label": "fastdata-stackgroup"
+        },
+        "stackgroup-layered": {
+          "label": "layered-stackgroup"
+        },
+        "stackgroup-universe": {
+          "label": "universe-stackgroup"
+        },
+        "stackpart-rke2-flink": {
+          "label": "flink-rke2"
+        },
+        "stackpart-rke2-spark": {
+          "label": "spark-rke2"
+        },
+        "stackpart-rke2-pulsar": {
+          "label": "pulsar-rke2"
+        },
+        "stackpart-rke2-roach": {
+          "label": "roach-rke2"
+        },
+        "stackpart-rke2-minio": {
+          "label": "minio-rke2"
+        },
+        "stackpart-rke2-scylla": {
+          "label": "scylla-rke2"
+        },
+        "stackpart-rke2-dashboard": {
+          "label": "dashboard-rke2"
+        },
+        "stackpart-rke2-prom": {
+          "label": "prom-rke2"
+        },
+        "stackpart-rke2-istio": {
+          "label": "istio-rke2"
+        },
+        "stackpart-rke2-grafana": {
+          "label": "grafana-rke2"
+        },
+        "stackpart-repository-virtual-generic": {
+          "label": "generic-virtual-repository"
+        },
+        "stackpart-repository-local-sbt": {
+          "label": "sbt-local-repository"
+        },
+        "stackpart-repository-remote-maven": {
+          "label": "maven-remote-repository"
+        },
+        "stackpart-repository-remote-docker": {
+          "label": "docker-remote-repository"
+        },
+        "stackpart-repository-local-docker": {
+          "label": "docker-local-repository"
+        },
+        "stackpart-cloud-awsvpc": {
+          "label": "awsvpc-cloud"
+        },
+        "stackpart-server-activedirectory": {
+          "label": "activedirectory-server"
+        }
+      },
+      "edges": [
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-repository-virtual-generic",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-repository-local-sbt",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-repository-local-sbt",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-repository-remote-maven",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-repository-remote-docker",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-repository-local-docker",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-cloud-awsvpc",
+          "relation": "stack-dependency"
+        },
+        {
+          "source": "stackgroup-universe",
+          "target": "stackpart-server-activedirectory",
+          "relation": "stack-dependency"
+        }
+      ],
+      "metadata": {}
+    },
+    {
+      "id": "perimeters",
+      "type": "root_perimeters",
+      "label": "Tomshley Root Perimeters",
+      "nodes": {
+        "tenant-global": {
+          "label": "global"
+        },
+        "tenant-global-usa": {
+          "label": "global-usa"
+        },
+        "tenant-global-italy": {
+          "label": "global-italy"
+        },
+        "perimeter-dev": {
+          "label": "dev-perimeter"
+        },
+        "perimeter-stage": {
+          "label": "stage-perimeter"
+        },
+        "perimeter-prod": {
+          "label": "prod-perimeter"
+        }
+      },
+      "edges": [
+        {
+          "source": "tenant-global",
+          "target": "perimeter-dev",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global",
+          "target": "perimeter-stage",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global",
+          "target": "perimeter-prod",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global-usa",
+          "target": "perimeter-dev",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global-usa",
+          "target": "perimeter-stage",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global-usa",
+          "target": "perimeter-prod",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global-italy",
+          "target": "perimeter-dev",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global-italy",
+          "target": "perimeter-stage",
+          "relation": "perimeter_relationship"
+        },
+        {
+          "source": "tenant-global-italy",
+          "target": "perimeter-prod",
+          "relation": "perimeter_relationship"
+        }
+      ],
+      "metadata": {}
+    }
+  ]
+}
